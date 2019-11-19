@@ -23,7 +23,7 @@ def send_mail():
     body = 'Check the Jumia link' \
            ' https://www.jumia.co.ke/sony-computer-entertainment-new-fifa-20-ps4-24665176.html'
 
-    msg = f"Subject:{subject}\n\n{body}"
+    msg = f"Subject:{subject} \n\n Body:{body}"
 
     server.sendmail(
         'ikariuki741@gmail.com',
@@ -45,7 +45,7 @@ def checkPrice():
     price = soup.find(class_="-b -ltr -tal -fs24").get_text().replace(",", "")
     converted_price = int(price[4:9])
     print('Checking Prices...')
-    if converted_price > 5099:
+    if converted_price <=5100:
         send_mail()
         print(title)
         print(converted_price)
